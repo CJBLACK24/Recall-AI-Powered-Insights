@@ -26,7 +26,7 @@ export const Route = createFileRoute('/api/ai/summary')({
 
         // stream summary
         const result = streamText({
-          model: openrouter.chat('xiaomi/mimo-v2-flash:free'),
+          model: openrouter.chat('google/gemini-2.0-flash-exp:free'),
           system: `You are a helpful assistant that creates concise, informative summaries of web content.
 Your summaries should:
 - Be 2-3 paragraphs long

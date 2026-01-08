@@ -25,65 +25,32 @@ export const Route = createFileRoute('/')({
   component: LandingPage,
   head: () => ({
     meta: [
-      { title: 'Learn TanStack Start | Build Full-Stack React Apps' },
+      { title: 'Recall - AI Powered Insights' },
       {
         name: 'description',
         content:
-          'A hands-on tutorial teaching you how to build modern full-stack React applications with TanStack Start, Prisma, AI integration, and more.',
+          'Your smart notebook for the web. Save links, get AI-powered summaries, and organize your insights automatically.',
       },
     ],
   }),
 })
 
-const techStack = [
-  {
-    name: 'TanStack Start',
-    description: 'Full-stack React framework with SSR and streaming',
-    icon: Layers,
-  },
-  {
-    name: 'TanStack Router',
-    description: 'Type-safe routing with file-based routes',
-    icon: Braces,
-  },
-  {
-    name: 'TanStack Form',
-    description: 'Powerful form management with validation',
-    icon: BookOpen,
-  },
-  {
-    name: 'Prisma + PostgreSQL',
-    description: 'Type-safe database access with modern ORM',
-    icon: Database,
-  },
-  {
-    name: 'Authentication',
-    description: 'Secure sessions with better-auth',
-    icon: Lock,
-  },
-  {
-    name: 'AI Integration',
-    description: 'Streaming AI responses with AI SDK',
-    icon: Sparkles,
-  },
-]
-
 const features = [
   {
     title: 'Import URLs',
-    description: 'Scrape web content with real-time streaming progress',
+    description: 'Save articles and documents from anywhere on the web.',
     icon: Globe,
     href: '/dashboard/import',
   },
   {
     title: 'AI Summaries',
-    description: 'Generate intelligent summaries with streaming AI',
+    description: 'Get instant, key-point summaries of your saved content.',
     icon: Sparkles,
     href: '/dashboard/items',
   },
   {
-    title: 'Discover Content',
-    description: 'Search the web and bulk import articles',
+    title: 'Organize & Review',
+    description: 'Automatically categorized insights for easy retrieval.',
     icon: BookOpen,
     href: '/dashboard/discover',
   },
@@ -107,16 +74,16 @@ function LandingPage() {
         <div className="relative z-10 mx-auto max-w-3xl space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-sm">
             <Sparkles className="h-4 w-4 text-primary" />
-            Hands-on Tutorial Project
+            AI-Powered Insights
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl">
-            Learn Full-Stack React with TanStack{' '}
-            <span className="text-primary">Start</span>
+            Your Smart Notebook for the{' '}
+            <span className="text-primary">Web</span>
           </h1>
           <p className="text-xl leading-relaxed text-muted-foreground">
-            Build a modern "Read Later" application from scratch. Master
-            type-safe routing, database integration, authentication, and AI
-            features.
+            Recall acts like a smart notebook. Save links to articles or
+            documents, and let our AI pull out the key points and organize them
+            for you.
           </p>
           <div className="flex items-center justify-center gap-4 pt-4">
             <Link
@@ -128,23 +95,10 @@ function LandingPage() {
               })}
             >
               <span className="relative z-10 flex items-center">
-                Start Learning
+                Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
-            <a
-              href="https://tanstack.com/start/latest"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={buttonVariants({
-                variant: 'outline',
-                size: 'lg',
-                className:
-                  'rounded-full px-8 transition-all duration-300 hover:scale-105',
-              })}
-            >
-              Documentation
-            </a>
           </div>
         </div>
 
@@ -161,7 +115,7 @@ function LandingPage() {
                   <div className="h-3 w-3 rounded-full bg-green-500/80" />
                 </div>
                 <div className="ml-4 flex-1 rounded-md bg-muted/50 px-3 py-1 text-xs text-muted-foreground">
-                  localhost:3000/dashboard/items
+                  recall-app.com/dashboard
                 </div>
               </div>
               {/* Fake app content */}
@@ -208,10 +162,10 @@ function LandingPage() {
               Core Features
             </div>
             <h2 className="mb-3 text-3xl font-bold tracking-tight md:text-4xl">
-              What You'll Build
+              Smart Features for Smart Readers
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">
-              A complete application showcasing modern web development patterns
+              Everything you need to capture and digest information efficiently.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -242,7 +196,7 @@ function LandingPage() {
                       className: 'w-full rounded-full',
                     })}
                   >
-                    Learn More
+                    Try it now
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </CardFooter>
@@ -252,46 +206,7 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Tech Stack Section */}
-      <section className="relative border-y bg-muted/30 px-4 py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-12 text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-background px-4 py-1.5 text-sm text-muted-foreground">
-              <Layers className="h-4 w-4 text-primary" />
-              Tech Stack
-            </div>
-            <h2 className="mb-3 text-3xl font-bold tracking-tight md:text-4xl">
-              Technologies You'll Master
-            </h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              The modern stack that powers production applications
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {techStack.map((tech, index) => (
-              <div
-                key={tech.name}
-                className="group relative overflow-hidden rounded-xl border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {/* Subtle gradient on hover */}
-                <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="relative flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-primary/10 to-purple-500/10 text-primary transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-purple-500/20">
-                    <tech.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">{tech.name}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {tech.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Tech Stack Section (Removed or Simplified? Keeping as 'Powered By' maybe, or removing as user wants 'Recall' based content. Detailed tech stack might be distracting on a product landing page, but this was a tutorial project. I will hide it or replace it with something more generic if user wants a real product feel. I'll just remove the section to align with 'Real World IT Industry Standard' product page which hides internals.) */}
 
       {/* CTA Section */}
       <section className="relative overflow-hidden px-4 py-24">
@@ -301,16 +216,12 @@ function LandingPage() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-2xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-muted/50 px-4 py-1.5 text-sm text-muted-foreground">
-            <Check className="h-4 w-4 text-green-500" />
-            Free & Open Source
-          </div>
           <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Ready to Start Building?
+            Start Organizing Your Web Today
           </h2>
           <p className="mb-8 text-lg text-muted-foreground">
-            Jump into the tutorial and build a real-world application from
-            scratch. Learn by doing with practical, hands-on examples.
+            Join thousands of users who are already using Recall to declutter
+            their reading list and retain more information.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
@@ -321,7 +232,7 @@ function LandingPage() {
                   'group rounded-full px-8 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25',
               })}
             >
-              Create Account
+              Create Free Account
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -344,38 +255,11 @@ function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <img
-                src="https://tanstack.com/images/logos/logo-color-600.png"
-                alt="TanStack"
-                className="h-4 w-4"
-              />
-              <span>Built with TanStack Start</span>
-            </div>
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <a
-                href="https://tanstack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-foreground"
-              >
-                TanStack
-              </a>
-              <a
-                href="https://prisma.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-foreground"
-              >
-                Prisma
-              </a>
-              <a
-                href="https://ui.shadcn.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-foreground"
-              >
-                shadcn/ui
-              </a>
+              <span className="font-semibold text-foreground">Recall</span>
+              <span>
+                © {new Date().getFullYear()} AI Powered Insights. All rights
+                reserved.
+              </span>
             </div>
           </div>
         </div>
